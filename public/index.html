@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wasm on Netlify</title>
+</head>
+<body>
+    <h1>C++ WebAssembly Result: <span id="result">Loading...</span></h1>
+
+    <script src="module.js"></script>
+    <script>
+        createModule().then(Module => {
+            const add = Module.cwrap('addNumbers', 'number', ['number', 'number']);
+            const result = add(15, 27);
+            document.getElementById('result').innerText = result;
+        });
+    </script>
+</body>
+</html>

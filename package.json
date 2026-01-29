@@ -1,0 +1,26 @@
+{
+  "name": "roostermaker",
+  "version": "1.0.0",
+  "description": "Een programma dat snel een zo goed mogelijk rooster maakt",
+  "main": "index.js",
+  "scripts": {
+    "build:wasm": "emcc src/main.cpp -o public/module.js -s EXPORTED_RUNTIME_METHODS=[\"cwrap\"] -s MODULARIZE=1 -s EXPORT_NAME=\"createModule\"",
+    "build": "npm run build:wasm",
+    "start": "serve public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FunMetJoel/Roostermaker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/FunMetJoel/Roostermaker/issues"
+  },
+  "homepage": "https://github.com/FunMetJoel/Roostermaker#readme",
+  "devDependencies": {
+    "serve": "^14.2.5"
+  }
+}
